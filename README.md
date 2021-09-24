@@ -1,2 +1,2 @@
 # social_card-jangelolvera
-Vista estática de la tarjeta (Avance)
+Vista dinamica de la tarjeta (Avance)
