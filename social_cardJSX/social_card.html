@@ -10,42 +10,61 @@
 
 <body>
     <style>
-        html{
+        html {
             height: 100%;
         }
 
-        body{
-            background-color:black;
+        body {
+            background-color: black;
             height: 100%;
         }
 
-        #root{
+        #root {
             height: 100%;
-            
+
         }
 
-        .general{
+        .general {
             height: 100%;
             display: flex;
-            flex-direction: row;
-            justify-content: space-around;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
+
         }
-        
-        .frontCard{
+
+
+        .frontCard {
+            position: absolute;
             display: flex;
             flex-direction: column;
             justify-content: center;
             width: 600px;
             height: 400px;
-            background-color: #2A2A2A;
             border-radius: 10px;
             border: 0px;
             padding: 0px;
+            border: 3px solid #444444;
+            background-image: url(/back_cir.jpeg);
+            background-size: cover;
+            animation-duration: 8s;
+            animation-name: slideOut;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
 
         }
 
-        .backCard{
+        @keyframes slideOut {
+            from {
+                margin-top: center;
+            }
+
+            to {
+                margin-top: 70%;
+            }
+        }
+
+        .backCard {
             display: flex;
             flex-direction: column;
             justify-content: space-around;
@@ -53,10 +72,11 @@
             height: 400px;
             background-color: #2A2A2A;
             border-radius: 10px;
-     
+            border: 3px solid #444444;
+
         }
 
-        .info{
+        .info {
             display: flex;
             flex-direction: column;
             justify-content: space-around;
@@ -64,37 +84,36 @@
             color: white;
             font-family: Poppins;
             font-size: 35px;
-            
         }
 
-        #nombre{
+        #nombre {
             font-family: Poppins;
-            font-size: 40px; 
+            font-size: 40px;
         }
 
-        div.userPic{
+        div.userPic {
             content: url(/angel_foto.png);
             width: 150px;
             height: 150px;
             margin: 10px;
-            margin-bottom: 10px;            
+            margin-bottom: 10px;
         }
 
-        div.fbLogo{
+        div.fbLogo {
             content: url(/facebook.png);
             width: 60px;
             height: 60px;
             margin: 20px;
         }
 
-        div.twLogo{
+        div.twLogo {
             content: url(/twt.png);
             width: 60px;
             height: 60px;
             margin: 20px;
         }
 
-        div.igLogo{
+        div.igLogo {
             content: url(/instagram.png);
             width: 60px;
             height: 60px;
@@ -102,7 +121,7 @@
 
         }
 
-        div.ghLogo{
+        div.ghLogo {
             content: url(/github.png);
             width: 60px;
             height: 60px;
@@ -110,11 +129,11 @@
 
         }
 
-        .datos{
+        .datos {
             margin: 20px;
         }
 
-        .socialm{
+        .socialm {
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -122,17 +141,21 @@
             color: white;
             font-family: Poppins;
             font-size: 30px;
-            
-        }
 
+        }
     </style>
+
     <div id="root"></div>
+
     <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
     <script type="text/babel">
+
         const rootElement = document.getElementById('root');
+
         class MyCard extends React.Component {
+
             render() {
 
                 return (
@@ -162,15 +185,16 @@
         }
 
         ReactDOM.render(
+
             <MyCard
                 name="José Angel Olvera López"
-                occupation="TI engineer"
-                school="Tecnologico de Monterrey"
+                occupation="TI Engineer"
                 fb="Angel Olvera"
                 tw="@JAngelOL99"
-                ig="j_angelol" 
-                gh="jangelolvera"/>,
+                ig="j_angelol"
+                gh="jangelolvera" />,
             rootElement
+
         )
     </script>
 </body>
